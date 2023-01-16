@@ -1,0 +1,95 @@
+.hero{
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+.hero-image{
+    width: 100%;
+}
+.hero-title{
+    max-width: 400px;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.hero-info{
+    max-width: 400px;
+}
+.btn{
+    background-color: #D9D9D9;
+    color: #060807;
+    font-weight: 600;
+    padding: 10px 25px;
+    margin-bottom: 10px;
+    border-radius: 0px;
+}
+.about-section{
+    background-color: #060807;
+    color: #FFFFFF;
+    padding: 40px 0px;
+}
+.about{
+    display: flex;
+    align-items: center;
+}
+.about-info{
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    .about{
+     flex-direction: column-reverse;
+    }
+}
+.shop-title{
+    margin-top: 40px;
+}
+.card{
+    width: 18rem;
+    border-radius: 0px;
+}
+.card-img-overlay {
+    top: 250px;
+    background-color: #0000008c;
+    font-weight: bold;
+    border-radius: 0px;
+}
+.card-img-top {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.card-title{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.shop, .shop-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.shop-2{
+    margin-top: 25px;
+}
+.shop-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+@media only screen and (max-width: 800px) {
+    .shop{
+        flex-direction: column;
+    }
+    .card{
+        margin-top: 25px;
+    }
+    .shop-2{
+     display: none;
+    }
+}
+.card-img{
+    width: 50%;
+}
+.peao{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
