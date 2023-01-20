@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Order } from 'src/app/models/order';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -10,19 +12,50 @@ export class ProductsDetailComponent implements OnInit {
 
   cartProduct;
   totalPrice;
+  orderCollection;
+  name = '';
+  email = '';
+  phone = '';
+  address = '';
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private afs: AngularFirestore) {
     this.cartProduct = cartService.myData$;
     this.totalPrice = cartService.totalPrice$;
-   }
+    this.orderCollection = afs.collection<Order>('receiving-data');
+  }
 
-   clearCart(){
+  clearCart() {
     this.cartService.clearCart();
-   }
+  }
 
-   removeItemToCart(index: number) {
+  removeItemToCart(index: number) {
     this.cartService.removeProductFromCart(index);
-}
+  }
+
+  private clearForm(){
+    this.name = '';
+    this.email = '';
+    this.phone = '';
+    this.address = '';
+  }
+
+  placeOrder(){
+    const products = this.cartService.getCartProducts();
+    if(products.length <= 0){
+      return ;
+    }
+    this.orderCollection.add(
+      {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        address: this.address,
+        orderProducts: products
+      }
+    )
+    this.cartService.clearCart();
+    this.clearForm();
+  }
 
   ngOnInit(): void {
     this.cartService.getCartProducts();
