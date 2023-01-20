@@ -4,9 +4,10 @@ h1{
 h4{
     margin-top: 15px;
 }
-.card{
-    width: 18rem;
+.card {
+    max-width: 24%;
     border-radius: 0px;
+    margin-top: 15px;
 }
 .card-img-overlay {
     top: 250px;
@@ -22,22 +23,25 @@ h4{
     color: #FFFFFF;
     font-weight: bold;
 }
-.shop, .shop-2, .shop-3{
+.shop{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-}
-.shop-2, .shop-3{
-    margin-top: 25px;
-}
-.shop-3{
+    flex-wrap: wrap;
     margin-bottom: 15px;
 }
 @media only screen and (max-width: 800px) {
-    .shop, .shop-2, .shop-3{
+    .shop{
         flex-direction: column;
     }
     .card{
+        max-width: 18rem;
+        margin-top: 25px;
+    }
+}
+@media screen and (min-width:820px) and (max-width:1280px){
+    .card{
+        max-width: 18rem;
         margin-top: 25px;
     }
 }

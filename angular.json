@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "peao-web:build:production",
+            "firebaseProject": "peao-web-app-angular",
+            "firebaseHostingSite": "peao-web-app-angular"
+          }
         }
       }
     }

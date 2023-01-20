@@ -5,20 +5,20 @@
             <div class="category-check">
                 <h4>Category</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+                    <label class="form-check-label" for="flexCheck1">
                         Adult
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheck2" checked="">
+                    <label class="form-check-label" for="flexCheck2">
                         Crespas
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
+                    <label class="form-check-label" for="flexCheck3">
                         Child
                     </label>
                 </div>
@@ -27,27 +27,33 @@
                 <div class="category-check">
                     <h4>Color Available</h4>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
+                        <label class="form-check-label" for="flexCheck4">
                             Black
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck5" checked="">
+                        <label class="form-check-label" for="flexCheck5">
                             Red
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck6">
+                        <label class="form-check-label" for="flexCheck6">
                             Blue
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck7">
+                        <label class="form-check-label" for="flexCheck7">
                             Dark Blue
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck8">
+                        <label class="form-check-label" for="flexCheck8">
+                            White
                         </label>
                     </div>
                 </div>
@@ -55,74 +61,14 @@
         </div>
         <div class="col-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
             <div class="shop">
-                <div class="card">
-                    <img src="./assets/images/sell.jpeg" class="card-img-top" alt="Cards">
+                <div class="card" *ngFor="let product of products | async">
+                    <img src="{{product.imageUrl}}" class="card-img-top" alt="Cards">
                     <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/images/sell-1.jpeg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/images/sell-2.jpeg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
+                      <h5 class="card-title">Price: {{product.price}} kz</h5>
+                      <a class="btn"(click)="addProductToCart(product)" >Go to Cart</a>
                     </div>
                 </div>
             </div> 
-            <div class="shop-2">
-                <div class="card">
-                    <img src="./assets/images/sell-3.jpeg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/images/sell-4.jpeg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/images/model.jpg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-            </div> 
-            <div class="shop-3">
-                <div class="card">
-                    <img src="./assets/images/model-2.jpg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/images/model-3.jpg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/images/model-1.jpg" class="card-img-top" alt="Cards">
-                    <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: 3500kz</h5>
-                      <a class="btn">Go to Cart</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
