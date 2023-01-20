@@ -17,10 +17,12 @@
             <a class="nav-link link" routerLink="/products-listing" routerLinkActive="active">Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link" routerLink="/login" routerLinkActive="active" >Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link"><img src="./assets/images/ic-shopping-cart.png" alt="Logo"></a>
+            <a class="nav-link link" routerLink="/products-detail" routerLinkActive="active">
+              <img src="./assets/images/ic-shopping-cart.png" alt="Logo">
+              <span>
+                {{(cartProducts | async)?.length}}
+              </span>
+            </a>
           </li>
         </ul>
       </div>

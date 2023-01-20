@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "peao-web-app-angular": {
+      "hosting": {
+        "peao-web": [
+          "peao-web-app-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "peao-web-app-angular"
+  }
+}
