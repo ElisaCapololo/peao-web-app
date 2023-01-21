@@ -32,7 +32,8 @@
         border-bottom-right-radius: 16px;
     }
 }
-
-section{
-    margin-bottom: 20px;
+@media only screen and (min-width: 905px) and (max-width: 1536px) {
+	section{
+        margin-bottom: 50px;
+    }
 }
