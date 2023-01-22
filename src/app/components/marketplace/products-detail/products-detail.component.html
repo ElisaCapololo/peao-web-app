@@ -1,4 +1,4 @@
-<section class="h-100 h-custom">
+<section class="h-100 h-custom-screen">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
@@ -10,8 +10,8 @@
               <div class="col-lg-8">
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
-                    <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                    <h6 class="mb-0 text-muted">{{(cartProduct | async)?.length}} items</h6>
+                    <h1 class="fw-bold mb-0 text-black">Carrinho de compras</h1>
+                    <h6 class="mb-0 text-muted">{{(cartProduct | async)?.length}} itens</h6>
                   </div>
                   <hr class="my-4">
 
@@ -44,28 +44,25 @@
                       <h6 class="mb-0">{{product.price}} kz</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <button class="btn" (click)="removeItemToCart(i)" class="btn btn-danger btn-block"> delete </button>
+                      <button class="btn" (click)="removeItemToCart(i)" class="btn btn-danger btn-block"> Eliminar </button>
                     </div>
                   </div>
-                  <!--<div class="col-md-1 col-lg-1 col-xl-1 text-end" *ngFor="let product of cartProduct |async; let i = index">
-                    <button class="btn" (click)="removeItemToCart(i)" class="text-muted"> delete </button>
-                  </div>-->
 
                   <hr class="my-4">
 
                   <div class="pt-5">
                     <h6 class="mb-0"><a routerLink="/products-listing" class="text-body"><i
-                          class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                          class="fas fa-long-arrow-alt-left me-2"></i>Voltar para a loja</a></h6>
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 bg-grey">
                 <div class="p-5">
-                  <h3 class="fw-bold mb-5 mt-2 pt-1">Order a Peão</h3>
+                  <h3 class="fw-bold mb-5 mt-2 pt-1">Encomendar Peão</h3>
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">items {{(cartProduct | async)?.length}}</h5>
+                    <h5 class="text-uppercase">itens {{(cartProduct | async)?.length}}</h5>
                     <h5>{{totalPrice | async}} kz</h5>
                   </div>
 
@@ -73,8 +70,8 @@
              
                     <div class="form-outline form-white mb-4">
                       <input [(ngModel)]="name" type="text" name="name" id="typeName" class="form-control form-control-lg" siez="17"
-                        placeholder="Name" />
-                      <label class="form-label" for="typeName">Name</label>
+                        placeholder="Nome" />
+                      <label class="form-label" for="typeName">Nome</label>
                     </div>
 
                     <div class="form-outline form-white mb-4">
@@ -86,13 +83,13 @@
                     <div class="form-outline form-white mb-4">
                       <input [(ngModel)]="phone" type="phone" name="phone" id="phone" class="form-control form-control-lg" siez="17"
                         placeholder="9xx-xxx-xxx" minlength="19" maxlength="19" />
-                      <label class="form-label" for="phone">Phone</label>
+                      <label class="form-label" for="phone">Telefone</label>
                     </div>
 
                     <div class="form-outline form-white mb-4">
                       <input [(ngModel)]="address" type="text" name="address" id="address" class="form-control form-control-lg" siez="17"
-                        placeholder="Address" />
-                      <label class="form-label" for="email">Address</label>
+                        placeholder="Endereço de entrega" />
+                      <label class="form-label" for="email">Endereço de entrega</label>
                     </div>
 
                   
@@ -100,12 +97,14 @@
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-5">
-                    <h5 class="text-uppercase">Total price</h5>
+                    <h5 class="text-uppercase">PREÇO TOTAL</h5>
                     <h5>{{totalPrice | async}} kz</h5>
                   </div>
 
+                  <h3 class="message">{{message}}</h3>
+
                   <button type="submit" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark" (click)="placeOrder()">Submit</button>
+                    data-mdb-ripple-color="dark" (click)="placeOrder()">Enviar</button>
                 </div>
               </div>
             </div>

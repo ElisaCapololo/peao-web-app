@@ -1,13 +1,13 @@
 <div class="container">
-    <h1>Shopping</h1>
+    <h1>Compras</h1>
     <div class="products row">
         <div class="col-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <div class="category-check">
-                <h4>Category</h4>
+                <h4>Categoria</h4>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
                     <label class="form-check-label" for="flexCheck1">
-                        Adult
+                        Adulto
                     </label>
                 </div>
                 <div class="form-check">
@@ -19,41 +19,41 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
                     <label class="form-check-label" for="flexCheck3">
-                        Child
+                        Crianças
                     </label>
                 </div>
             </div>
             <div class="color-check">
                 <div class="category-check">
-                    <h4>Color Available</h4>
+                    <h4>Cores Disponiveis</h4>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
                         <label class="form-check-label" for="flexCheck4">
-                            Black
+                            Preto
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck5" checked="">
                         <label class="form-check-label" for="flexCheck5">
-                            Red
+                            Vermelho
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck6">
                         <label class="form-check-label" for="flexCheck6">
-                            Blue
+                            Azul
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck7">
                         <label class="form-check-label" for="flexCheck7">
-                            Dark Blue
+                            Azul Escuro
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck8">
                         <label class="form-check-label" for="flexCheck8">
-                            White
+                            Branco
                         </label>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                 <div class="card" *ngFor="let product of products | async">
                     <img src="{{product.imageUrl}}" class="card-img-top" alt="Cards">
                     <div class="card-body card-img-overlay">
-                      <h5 class="card-title">Price: {{product.price}} kz</h5>
-                      <a class="btn"(click)="addProductToCart(product)" >Go to Cart</a>
+                      <h5 class="card-title">Preço: {{product.price}} kz</h5>
+                      <a class="btn"(click)="addProductToCart(product)" >Adicionar no carrinho</a>
                     </div>
                 </div>
             </div> 

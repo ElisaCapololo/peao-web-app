@@ -17,6 +17,7 @@ export class ProductsDetailComponent implements OnInit {
   email = '';
   phone = '';
   address = '';
+  message = '';
 
   constructor(private cartService: CartService, private afs: AngularFirestore) {
     this.cartProduct = cartService.myData$;
@@ -42,7 +43,8 @@ export class ProductsDetailComponent implements OnInit {
   placeOrder(){
     const products = this.cartService.getCartProducts();
     if(products.length <= 0){
-      return ;
+      this.message = "Adiciona Peão no carrinho";
+      return alert(this.message) ;
     }
     this.orderCollection.add(
       {
@@ -55,6 +57,8 @@ export class ProductsDetailComponent implements OnInit {
     )
     this.cartService.clearCart();
     this.clearForm();
+    this.message = "Enviado com sucesso";
+
   }
 
   ngOnInit(): void {
