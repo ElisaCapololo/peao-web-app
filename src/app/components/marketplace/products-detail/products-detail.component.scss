@@ -36,10 +36,12 @@
 	section{
         margin-bottom: 50px;
     }
+   
 }
-@media (min-width: 1025px){
+@media (max-width: 900px){
     .h-custom-screen{
         height: 100vh !important;
     }
 }
+
 
