@@ -19,6 +19,7 @@ import { OrderHistoryComponent } from './components/marketplace/order-history/or
 import { FooterComponent } from './app-core/common/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
   ],
