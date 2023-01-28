@@ -25,7 +25,6 @@ export class ProductsListingComponent implements OnInit {
   }
 
 
-
   ngOnInit(): void {
   }
 

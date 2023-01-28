@@ -57,9 +57,31 @@ export class ProductsDetailComponent implements OnInit {
     )
     this.cartService.clearCart();
     this.clearForm();
+    
+    /**Send items in whatsApp */
+    let total = 0;
+    let message = `
+      Ola 👋🏾.
+
+      Eu gostaria de encomendar os seguintes itens:
+
+     ${products
+       .map((item: any) => {
+         total += +item.price;
+         return '* ' + item.category + ': ' + item.color + ': ' + item.imageUrl + ': ' + item.price + '\n\n';
+       })
+       .join('')}
+       o total é ${total}
+    `;
+
+    let encodedURI = encodeURIComponent(message);
+    console.log(encodedURI);
+
+    window.open(`https://wa.me/244942745477?text=${encodedURI}`, '_blank');
     this.message = "Enviado com sucesso";
 
   }
+  
 
   ngOnInit(): void {
     this.cartService.getCartProducts();
